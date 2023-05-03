@@ -19,6 +19,8 @@ export const Crew = () => {
             return (
               <CrewCard
                 key={member.id}
+                campaignId={campaignId}
+                characterId={member.id}
                 name={member.name}
                 race={member.race}
                 genre={member.genre}

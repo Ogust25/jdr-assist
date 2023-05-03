@@ -7,6 +7,7 @@ import { Campaigns } from "./src/views/campaigns";
 import { About } from "./src/views/about";
 import { Map } from "./src/views/map";
 import { Crew } from "./src/views/crew";
+import { CharacterPage } from "./src/views/characterPage";
 
 const Stack = createNativeStackNavigator();
 
@@ -45,6 +46,13 @@ export default function App() {
         <Stack.Screen
           name="Crew"
           component={Crew}
+          options={{
+            headerShown: false,
+          }}
+        />
+        <Stack.Screen
+          name="CharacterPage"
+          component={CharacterPage}
           options={{
             headerShown: false,
           }}
