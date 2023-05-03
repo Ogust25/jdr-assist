@@ -3,7 +3,7 @@ import { View, Text, TouchableOpacity } from "react-native-web";
 
 export const Home = ({ navigation }) => {
   function goCampaign() {
-    navigation.navigate("Campaign");
+    navigation.navigate("Campaigns");
   }
 
   function goAbout() {

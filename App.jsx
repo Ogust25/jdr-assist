@@ -3,7 +3,7 @@ import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
 import { Home } from "./src/views/home";
-import { Campaign } from "./src/views/campaign";
+import { Campaigns } from "./src/views/campaigns";
 import { About } from "./src/views/about";
 import { Map } from "./src/views/map";
 
@@ -21,8 +21,8 @@ export default function App() {
           }}
         />
         <Stack.Screen
-          name="Campaign"
-          component={Campaign}
+          name="Campaigns"
+          component={Campaigns}
           options={{
             headerShown: false,
           }}
