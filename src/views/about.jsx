@@ -10,10 +10,9 @@ export const About = ({ navigation }) => {
     <View>
       <Text>About</Text>
       <Text>
-        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Mollitia,
-        nisi? Tempora laudantium tempore inventore. Rerum tenetur nemo pariatur
-        maxime ducimus velit quis minus itaque. Aperiam error sunt officiis et
-        sint.
+        Projet de fin d'année de développeur concepteur d'applications.
+        Application qui a pour but d'assister un maître du jeu dans une partie
+        de Donjon et Dragon : La porte de Baldur.
       </Text>
       <TouchableOpacity onPress={goHome}>
         <Text>Back</Text>
