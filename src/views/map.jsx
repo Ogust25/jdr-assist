@@ -1,5 +1,5 @@
 import React from "react";
-import { View, Text } from "react-native-web";
+import { View, Text } from "react-native";
 import { useRoute } from "@react-navigation/native";
 import { NavBar } from "../components/NavBar";
 import { style } from "../style/map";

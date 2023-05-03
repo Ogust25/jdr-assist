@@ -1,10 +1,9 @@
 import React from "react";
-import { View, Text, Touchable } from "react-native-web";
+import { View, Text, TouchableOpacity } from "react-native";
 import { useRoute } from "@react-navigation/native";
 import { NavBar } from "../components/NavBar";
 import { style } from "../style/characterPage";
 import fakeBDD from "../fakeBDD.json";
-import { TouchableOpacity } from "react-native";
 
 export const CharacterPage = () => {
   const route = useRoute();

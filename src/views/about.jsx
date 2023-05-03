@@ -1,5 +1,5 @@
 import React from "react";
-import { View, Text, TouchableOpacity } from "react-native-web";
+import { View, Text, TouchableOpacity } from "react-native";
 
 export const About = ({ navigation }) => {
   function goHome() {
