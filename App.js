@@ -5,6 +5,7 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { Home } from "./src/views/home";
 import { Campaign } from "./src/views/campaign";
 import { About } from "./src/views/about";
+import { Map } from "./src/views/map";
 
 const Stack = createNativeStackNavigator();
 
@@ -22,6 +23,13 @@ export default function App() {
         <Stack.Screen
           name="Campaign"
           component={Campaign}
+          options={{
+            headerShown: false,
+          }}
+        />
+        <Stack.Screen
+          name="Map"
+          component={Map}
           options={{
             headerShown: false,
           }}
