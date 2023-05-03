@@ -1,0 +1,110 @@
+[
+  { 
+    "id": 0,
+    "name": "Camagne 1",
+    "crewMembers": [
+      { 
+        "id": 0,
+        "name": "Ougabouga",
+        "race": "Orc",
+        "genre":"Male",
+        "lvl": 5,
+        "stats": {
+          "strength": 5,
+          "dexterity": 4,
+          "constitution": 5,
+          "intelligence": 2,
+          "wisdom": 7,
+          "charisma": 9
+        } 
+      },
+      { 
+        "id": 1,
+        "name": "Legolas",
+        "race": "Elf",
+        "genre": "Male",
+        "lvl": 5,
+        "stats": {
+          "strength": 5,
+          "dexterity": 4,
+          "constitution": 5,
+          "intelligence": 2,
+          "wisdom": 7,
+          "charisma": 9
+        }
+      }
+    ]
+  },
+  { 
+    "id": 1,
+    "name": "Camagne 2",
+    "crewMembers": [
+      { 
+        "id": 0,
+        "name": "Legolas",
+        "race": "Elf",
+        "genre": "Male",
+        "lvl": 5,
+        "stats": {
+          "strength": 5,
+          "dexterity": 4,
+          "constitution": 5,
+          "intelligence": 2,
+          "wisdom": 7,
+          "charisma": 9
+        }
+      },
+      {
+        "id": 1,
+        "name": "Galadriel",
+        "race": "Elf",
+        "genre": "Female",
+        "lvl": 5,
+        "stats": {
+          "strength": 5,
+          "dexterity": 4,
+          "constitution": 5,
+          "intelligence": 2,
+          "wisdom": 7,
+          "charisma": 9
+        }
+      }
+    ]
+  },
+  { 
+    "id": 2,
+    "name": "Camagne 3",
+    "crewMembers": [
+      { 
+        "id": 0,
+        "name": "Ougabouga",
+        "race": "Orc",
+        "genre":"Male",
+        "lvl": 5,
+        "stats": {
+          "strength": 5,
+          "dexterity": 4,
+          "constitution": 5,
+          "intelligence": 2,
+          "wisdom": 7,
+          "charisma": 9
+        } 
+      },
+      {
+        "id": 1,
+        "name": "Galadriel",
+        "race": "Elf",
+        "genre": "Female",
+        "lvl": 5,
+        "stats": {
+          "strength": 5,
+          "dexterity": 4,
+          "constitution": 5,
+          "intelligence": 2,
+          "wisdom": 7,
+          "charisma": 9
+        }
+      }
+    ]
+  }
+]

@@ -10,7 +10,7 @@ export const Map = () => {
 
   return (
     <View style={style.container}>
-      <Text>Menu Campagnes {campaignId}</Text>
+      <Text>Menu Campagnes {campaignId + 1}</Text>
       <Text>BIG MAP WIP</Text>
       <NavBar campaignId={campaignId} />
     </View>

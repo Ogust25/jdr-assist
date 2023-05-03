@@ -1,30 +1,23 @@
 import React from "react";
 import { View, Text, TouchableOpacity } from "react-native-web";
 import { useNavigation } from "@react-navigation/native";
+import fakeBDD from "../fakeBDD.json";
 import { styles } from "../style/campagnes";
 
 export const Campaigns = () => {
   const navigation = useNavigation();
 
-  const campaigns = [
-    { id: 1, name: "Camagne 1" },
-    { id: 2, name: "Camagne 2" },
-    { id: 3, name: "Camagne 3" },
-  ];
-
-  const goMap = (campaignId) => {
-    navigation.navigate("Map", { campaignId: campaignId });
-  };
-
   return (
     <View>
       <Text>Mes Campagnes</Text>
-      {campaigns &&
-        campaigns.map((camagne) => {
+      {fakeBDD &&
+        fakeBDD.map((camagne) => {
           return (
             <TouchableOpacity
               key={camagne.id}
-              onPress={() => goMap(campaigns.id)}
+              onPress={() =>
+                navigation.navigate("Map", { campaignId: camagne.id })
+              }
             >
               <Text>{camagne.name}</Text>
             </TouchableOpacity>
