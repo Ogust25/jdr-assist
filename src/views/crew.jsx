@@ -4,6 +4,7 @@ import { useRoute } from "@react-navigation/native";
 import { NavBar } from "../components/NavBar";
 import { style } from "../style/crew";
 import { CrewCard } from "../components/CrewCard";
+import { BsPlusLg } from "react-icons/bs";
 import fakeBDD from "../fakeBDD.json";
 
 export const Crew = () => {
@@ -28,7 +29,7 @@ export const Crew = () => {
             );
           })}
         <TouchableOpacity>
-          <Text>+</Text>
+          <BsPlusLg />
         </TouchableOpacity>
       </View>
       <NavBar campaignId={campaignId} />

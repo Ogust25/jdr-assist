@@ -2,6 +2,7 @@ import React from "react";
 import { View, Text, TouchableOpacity } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import fakeBDD from "../fakeBDD.json";
+import { BsPlusLg } from "react-icons/bs";
 import { styles } from "../style/campagnes";
 
 export const Campaigns = () => {
@@ -24,7 +25,7 @@ export const Campaigns = () => {
           );
         })}
       <TouchableOpacity>
-        <Text>+</Text>
+        <BsPlusLg />
       </TouchableOpacity>
     </View>
   );
