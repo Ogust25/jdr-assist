@@ -1,14 +1,22 @@
 import React from "react";
-import { View, Text, TouchableOpacity } from "react-native";
+import { View, Text, TouchableOpacity, Image } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import { style } from "./style";
 
-export const CrewCard = ({ name, race, genre, characterId, campaignId }) => {
+export const CrewCard = ({
+  name,
+  race,
+  genre,
+  characterId,
+  campaignId,
+  img,
+}) => {
   const navigation = useNavigation();
 
   return (
-    <View style={style.container}>
+    <View>
       <TouchableOpacity
+        style={style.container}
         onPress={() =>
           navigation.navigate("CharacterPage", {
             campaignId: campaignId,
@@ -16,7 +24,10 @@ export const CrewCard = ({ name, race, genre, characterId, campaignId }) => {
           })
         }
       >
-        <Text>Img</Text>
+        <Image
+          source={require("../../../public/assets/images/" + img)}
+          style={style.img}
+        />
         <View>
           <Text>{name}</Text>
           <Text>

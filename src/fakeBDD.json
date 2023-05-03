@@ -10,6 +10,7 @@
         "genre":"Male",
         "lvl": 5,
         "classe": "Warrior",
+        "image": "orcMale.png",
         "stats": {
           "strength": 5,
           "dexterity": 4,
@@ -26,6 +27,7 @@
         "genre": "Male",
         "lvl": 5,
         "classe": "Ranger",
+        "image": "elfMale.png",
         "stats": {
           "strength": 5,
           "dexterity": 4,
@@ -48,6 +50,7 @@
         "genre": "Male",
         "lvl": 5,
         "classe": "Ranger",
+        "image": "orcMale.png",
         "stats": {
           "strength": 5,
           "dexterity": 4,
@@ -64,6 +67,7 @@
         "genre": "Female",
         "lvl": 5,
         "classe": "Mage",
+        "image": "elfFemale.png",
         "stats": {
           "strength": 5,
           "dexterity": 4,
@@ -86,6 +90,7 @@
         "genre":"Male",
         "lvl": 5,
         "classe": "Warrior",
+        "image": "orcMale.png",
         "stats": {
           "strength": 5,
           "dexterity": 4,
@@ -102,6 +107,7 @@
         "genre": "Female",
         "lvl": 5,
         "classe": "Mage",
+        "image": "elfFemale.png",
         "stats": {
           "strength": 5,
           "dexterity": 4,

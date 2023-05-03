@@ -6,6 +6,7 @@ import { style } from "../style/crew";
 import { CrewCard } from "../components/CrewCard";
 import { BsPlusLg } from "react-icons/bs";
 import fakeBDD from "../fakeBDD.json";
+import orcMale from "../../public/assets/images/orcMale.png";
 
 export const Crew = () => {
   const route = useRoute();
@@ -25,6 +26,7 @@ export const Crew = () => {
                 name={member.name}
                 race={member.race}
                 genre={member.genre}
+                img={member.image}
               />
             );
           })}
