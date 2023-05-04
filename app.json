@@ -24,7 +24,7 @@
       }
     },
     "web": {
-      "favicon": "./assets/favicon.png"
+      "favicon": "./public/assets/images/favicon-32x32.png"
     }
   }
 }
