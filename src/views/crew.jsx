@@ -6,7 +6,6 @@ import { style } from "../style/crew";
 import { CrewCard } from "../components/CrewCard";
 import { BsPlusLg } from "react-icons/bs";
 import fakeBDD from "../fakeBDD.json";
-import orcMale from "../../public/assets/images/orcMale.png";
 
 export const Crew = () => {
   const route = useRoute();
@@ -17,6 +16,7 @@ export const Crew = () => {
       <Text>Crew</Text>
       <View>
         {fakeBDD[campaignId].crewMembers &&
+        fakeBDD[campaignId].crewMembers.length > 0 ? (
           fakeBDD[campaignId].crewMembers.map((member) => {
             return (
               <CrewCard
@@ -29,7 +29,10 @@ export const Crew = () => {
                 img={member.image}
               />
             );
-          })}
+          })
+        ) : (
+          <Text>Aucun membre d'équipage pour cette campagne.</Text>
+        )}
         <TouchableOpacity>
           <BsPlusLg />
         </TouchableOpacity>
