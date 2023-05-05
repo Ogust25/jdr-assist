@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import {
   View,
   Text,
@@ -6,42 +6,64 @@ import {
   Modal,
   TextInput,
   Button,
+  ActivityIndicator,
 } from "react-native";
 import { useNavigation } from "@react-navigation/native";
-import fakeBDD from "../fakeBDD.json";
 import { BsPlusLg } from "react-icons/bs";
 import { style } from "../style/campaigns";
+import { db, collection, addDoc, getDocs } from "../firebase/config";
 
 export const Campaigns = () => {
   const navigation = useNavigation();
   const [modalVisible, setModalVisible] = useState(false);
   const [textValue, setTextValue] = useState("");
+  const [campaigns, setCampaigns] = useState([]);
 
-  const handleSubmit = () => {
-    fakeBDD.push({
-      id: Math.random(),
-      name: textValue,
-      crewMembers: [],
-    });
+  const addCampaign = async () => {
+    try {
+      const docRef = await addDoc(collection(db, "campaign"), {
+        name: textValue,
+        crewMembers: [],
+      });
+      setTextValue("");
+    } catch (e) {
+      console.error("error: " + e);
+    }
+    getCampaign();
     setModalVisible(false);
   };
+
+  const getCampaign = async () => {
+    const querySnapshot = await getDocs(collection(db, "campaign"));
+    setCampaigns(
+      querySnapshot.docs.map((doc) => ({ ...doc.data(), id: doc.id }))
+    );
+  };
+
+  useEffect(() => {
+    getCampaign();
+  }, []);
 
   return (
     <View>
       <Text>Mes Campagnes</Text>
-      {fakeBDD &&
-        fakeBDD.map((camagne) => {
+      {campaigns.length > 0 ? (
+        campaigns.map((campaign) => {
           return (
             <TouchableOpacity
-              key={camagne.id}
+              key={campaign.id}
               onPress={() =>
-                navigation.navigate("Map", { campaignId: camagne.id })
+                navigation.navigate("Map", { campaignId: campaign.id })
               }
             >
-              <Text>{camagne.name}</Text>
+              <Text>{campaign.name}</Text>
             </TouchableOpacity>
           );
-        })}
+        })
+      ) : (
+        <ActivityIndicator />
+      )}
+
       <TouchableOpacity onPress={() => setModalVisible(true)}>
         <BsPlusLg />
       </TouchableOpacity>
@@ -61,8 +83,9 @@ export const Campaigns = () => {
               onChangeText={setTextValue}
               placeholder="Nom de la campagne"
               value={textValue}
+              onSubmitEditing={addCampaign}
             />
-            <Button title="Valider" onPress={handleSubmit} />
+            <Button title="Valider" onPress={addCampaign} />
           </View>
         </View>
       </Modal>
