@@ -1,37 +1,48 @@
-import React from "react";
-import { View, Text, TouchableOpacity } from "react-native";
+import React, { useState, useEffect } from "react";
+import { View, Text, TouchableOpacity, ActivityIndicator } from "react-native";
 import { useRoute } from "@react-navigation/native";
 import { NavBar } from "../components/NavBar";
 import { style } from "../style/crew";
 import { CrewCard } from "../components/CrewCard";
 import { BsPlusLg } from "react-icons/bs";
-import fakeBDD from "../fakeBDD.json";
+import { db, collection, addDoc, doc, getDoc } from "../firebase/config";
 
 export const Crew = () => {
   const route = useRoute();
   const { campaignId } = route.params;
+  const [crewMembers, setCrewMembers] = useState([]);
+
+  const getCrewMembers = async () => {
+    const querySnapshot = await getDoc(
+      doc(collection(db, "campaign"), campaignId)
+    );
+    setCrewMembers(
+      querySnapshot.data().crewMembers.map((member) => ({
+        ...member,
+      }))
+    );
+  };
+
+  useEffect(() => {
+    getCrewMembers();
+  }, []);
 
   return (
     <View style={style.container}>
       <Text>Crew</Text>
       <View>
-        {fakeBDD[campaignId].crewMembers &&
-        fakeBDD[campaignId].crewMembers.length > 0 ? (
-          fakeBDD[campaignId].crewMembers.map((member) => {
+        {crewMembers.length > 0 ? (
+          crewMembers.map((member) => {
             return (
               <CrewCard
                 key={member.id}
                 campaignId={campaignId}
-                characterId={member.id}
-                name={member.name}
-                race={member.race}
-                genre={member.genre}
-                img={member.image}
+                member={member}
               />
             );
           })
         ) : (
-          <Text>Aucun membre d'équipage pour cette campagne.</Text>
+          <ActivityIndicator />
         )}
         <TouchableOpacity>
           <BsPlusLg />

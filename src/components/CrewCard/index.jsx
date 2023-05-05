@@ -3,15 +3,24 @@ import { View, Text, TouchableOpacity, Image } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import { style } from "./style";
 
-export const CrewCard = ({
-  name,
-  race,
-  genre,
-  characterId,
-  campaignId,
-  img,
-}) => {
+export const CrewCard = ({ member, campaignId }) => {
   const navigation = useNavigation();
+
+  const imgSelector = () => {
+    let imgProfil = "";
+    switch (member.image) {
+      case "orcMale":
+        imgProfil = require("../../../public/assets/images/orcMale.png");
+        break;
+      case "elfMale":
+        imgProfil = require("../../../public/assets/images/elfMale.png");
+        break;
+      case "elfFemale":
+        imgProfil = require("../../../public/assets/images/elfFemale.png");
+        break;
+    }
+    return imgProfil;
+  };
 
   return (
     <View>
@@ -20,18 +29,15 @@ export const CrewCard = ({
         onPress={() =>
           navigation.navigate("CharacterPage", {
             campaignId: campaignId,
-            characterId: characterId,
+            characterId: member.id,
           })
         }
       >
-        <Image
-          source={require("../../../public/assets/images/" + img)}
-          style={style.img}
-        />
+        <Image source={imgSelector()} style={style.img} />
         <View>
-          <Text>{name}</Text>
+          <Text>{member.name}</Text>
           <Text>
-            {race}, {genre}
+            {member.race}, {member.genre}
           </Text>
         </View>
       </TouchableOpacity>
