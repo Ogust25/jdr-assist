@@ -29,7 +29,7 @@ export const CrewCard = ({ member, campaignId }) => {
         onPress={() =>
           navigation.navigate("CharacterPage", {
             campaignId: campaignId,
-            characterId: member.id,
+            character: member,
           })
         }
       >
