@@ -1,5 +1,8 @@
 import React from "react";
-import { View, Text, TouchableOpacity } from "react-native";
+import { View, TouchableOpacity, Image } from "react-native";
+import { CustomText } from "../components/CustomText";
+import logo from "../../public/assets/images/logo.png";
+import { style } from "../style/home";
 
 export const Home = ({ navigation }) => {
   function goCampaign() {
@@ -11,13 +14,17 @@ export const Home = ({ navigation }) => {
   }
 
   return (
-    <View>
-      <Text>Jdr Assist</Text>
-      <TouchableOpacity onPress={goCampaign}>
-        <Text>Jouer</Text>
+    <View style={style.mainContainer}>
+      <View style={style.logoContainer}>
+        <Image source={logo} style={style.img} />
+        <CustomText style={style.text}>JDR</CustomText>
+        <CustomText style={style.text}>COMPAGNON</CustomText>
+      </View>
+      <TouchableOpacity onPress={goCampaign} style={style.btnStart}>
+        <CustomText style={style.text}>COMMENCER</CustomText>
       </TouchableOpacity>
-      <TouchableOpacity onPress={goAbout}>
-        <Text>A propos</Text>
+      <TouchableOpacity onPress={goAbout} style={style.btnAbout}>
+        <CustomText style={style.text}>A PROPOS</CustomText>
       </TouchableOpacity>
     </View>
   );

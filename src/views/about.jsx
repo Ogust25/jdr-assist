@@ -1,5 +1,6 @@
 import React from "react";
-import { View, Text, TouchableOpacity } from "react-native";
+import { View, TouchableOpacity } from "react-native";
+import { CustomText } from "../components/CustomText";
 
 export const About = ({ navigation }) => {
   function goHome() {
@@ -8,14 +9,14 @@ export const About = ({ navigation }) => {
 
   return (
     <View>
-      <Text>About</Text>
-      <Text>
+      <CustomText>About</CustomText>
+      <CustomText>
         Projet de fin d'année de développeur concepteur d'applications.
         Application qui a pour but d'assister un maître du jeu dans une partie
         de Donjon et Dragon : La porte de Baldur.
-      </Text>
+      </CustomText>
       <TouchableOpacity onPress={goHome}>
-        <Text>Back</Text>
+        <CustomText>Back</CustomText>
       </TouchableOpacity>
     </View>
   );

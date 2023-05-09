@@ -1,5 +1,6 @@
 import React from "react";
-import { View, Text, TouchableOpacity, Image } from "react-native";
+import { View, TouchableOpacity, Image } from "react-native";
+import { CustomText } from "../CustomText";
 import { useNavigation } from "@react-navigation/native";
 import { style } from "./style";
 
@@ -35,10 +36,10 @@ export const CrewCard = ({ member, campaignId }) => {
       >
         <Image source={imgSelector()} style={style.img} />
         <View>
-          <Text>{member.name}</Text>
-          <Text>
+          <CustomText>{member.name}</CustomText>
+          <CustomText>
             {member.race}, {member.genre}
-          </Text>
+          </CustomText>
         </View>
       </TouchableOpacity>
     </View>

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
-import { View, Text, TouchableOpacity, ActivityIndicator } from "react-native";
+import { View, TouchableOpacity, ActivityIndicator } from "react-native";
+import { CustomText } from "../components/CustomText";
 import { useRoute } from "@react-navigation/native";
 import { NavBar } from "../components/NavBar";
 import { style } from "../style/crew";
@@ -29,7 +30,7 @@ export const Crew = () => {
 
   return (
     <View style={style.container}>
-      <Text>Crew</Text>
+      <CustomText>Crew</CustomText>
       <View>
         {crewMembers.length > 0 ? (
           crewMembers.map((member) => {

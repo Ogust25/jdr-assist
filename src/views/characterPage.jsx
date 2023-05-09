@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
-import { View, Text, TouchableOpacity } from "react-native";
+import { View, TouchableOpacity } from "react-native";
+import { CustomText } from "../components/CustomText";
 import { useRoute } from "@react-navigation/native";
 import { NavBar } from "../components/NavBar";
 import { style } from "../style/characterPage";
@@ -12,23 +13,23 @@ export const CharacterPage = () => {
   return (
     <View style={style.container}>
       <View>
-        <Text>{character.name}</Text>
-        <Text>
+        <CustomText>{character.name}</CustomText>
+        <CustomText>
           {character.race}, {character.genre}
-        </Text>
-        <Text>{character.classe}</Text>
-        <Text>LVL {character.lvl}</Text>
+        </CustomText>
+        <CustomText>{character.classe}</CustomText>
+        <CustomText>LVL {character.lvl}</CustomText>
       </View>
       <View>
-        <Text>Statistique</Text>
-        <Text>Force: {character.stats.strength}</Text>
-        <Text>Dexterité: {character.stats.dexterity}</Text>
-        <Text>Constitution: {character.stats.constitution}</Text>
-        <Text>Intelligence: {character.stats.intelligence}</Text>
-        <Text>Sagesse: {character.stats.wisdom}</Text>
-        <Text>Charisme: {character.stats.charisma}</Text>
+        <CustomText>Statistique</CustomText>
+        <CustomText>Force: {character.stats.strength}</CustomText>
+        <CustomText>Dexterité: {character.stats.dexterity}</CustomText>
+        <CustomText>Constitution: {character.stats.constitution}</CustomText>
+        <CustomText>Intelligence: {character.stats.intelligence}</CustomText>
+        <CustomText>Sagesse: {character.stats.wisdom}</CustomText>
+        <CustomText>Charisme: {character.stats.charisma}</CustomText>
         <TouchableOpacity onPress={() => console.log("modifier")}>
-          <Text>Modifier</Text>
+          <CustomText>Modifier</CustomText>
         </TouchableOpacity>
       </View>
       <NavBar campaignId={campaignId} />

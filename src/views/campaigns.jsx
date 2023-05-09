@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from "react";
 import {
   View,
-  Text,
   TouchableOpacity,
   Modal,
   TextInput,
   Button,
   ActivityIndicator,
 } from "react-native";
+import { CustomText } from "../components/CustomText";
 import { useNavigation } from "@react-navigation/native";
 import { BsPlusLg } from "react-icons/bs";
 import { style } from "../style/campaigns";
@@ -46,7 +46,7 @@ export const Campaigns = () => {
 
   return (
     <View>
-      <Text>Mes Campagnes</Text>
+      <CustomText>Mes Campagnes</CustomText>
       {campaigns.length > 0 ? (
         campaigns.map((campaign) => {
           return (
@@ -56,7 +56,7 @@ export const Campaigns = () => {
                 navigation.navigate("Map", { campaignId: campaign.id })
               }
             >
-              <Text>{campaign.name}</Text>
+              <CustomText>{campaign.name}</CustomText>
             </TouchableOpacity>
           );
         })

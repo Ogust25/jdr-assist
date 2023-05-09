@@ -1,5 +1,6 @@
 import React from "react";
-import { View, Text } from "react-native";
+import { View } from "react-native";
+import { CustomText } from "../components/CustomText";
 import { useRoute } from "@react-navigation/native";
 import { NavBar } from "../components/NavBar";
 import { style } from "../style/map";
@@ -10,8 +11,8 @@ export const Map = () => {
 
   return (
     <View style={style.container}>
-      <Text>Menu Campagnes {campaignId + 1}</Text>
-      <Text>BIG MAP WIP</Text>
+      <CustomText>Menu Campagnes {campaignId + 1}</CustomText>
+      <CustomText>BIG MAP WIP</CustomText>
       <NavBar campaignId={campaignId} />
     </View>
   );
