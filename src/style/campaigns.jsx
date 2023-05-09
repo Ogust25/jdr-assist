@@ -1,13 +1,43 @@
 import { StyleSheet } from "react-native";
 
 export const style = StyleSheet.create({
-  buttonCampagne: {
-    backgroundColor: "red",
-  },
-  container: {
-    flex: 1,
-    justifyContent: "center",
+  mainContainer: {
+    display: "flex",
     alignItems: "center",
+    justifyContent: "center",
+    width: "100vw",
+    height: "100vh",
+    backgroundColor: "#212121",
+    padding: "30px",
+  },
+  titleContainer: {
+    display: "flex",
+    alignItems: "center",
+    marginBottom: "40px",
+  },
+  campaignsContainer: {
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "space-evenly",
+  },
+  text: {
+    fontSize: "20px",
+    color: "white",
+  },
+  btnCampaign: {
+    backgroundColor: "#721E20",
+    paddingHorizontal: "15px",
+    paddingVertical: "5px",
+    borderRadius: "10px",
+    textAlign: "center",
+    marginBottom: "10px",
+  },
+  btnPlus: {
+    backgroundColor: "#721E20",
+    paddingHorizontal: "15px",
+    paddingVertical: "14px",
+    borderRadius: "10px",
+    marginTop: "40px",
   },
   modalContainer: {
     flex: 1,
@@ -19,13 +49,5 @@ export const style = StyleSheet.create({
     backgroundColor: "#fff",
     padding: 20,
     borderRadius: 10,
-  },
-  textInput: {
-    borderWidth: 1,
-    borderColor: "#ccc",
-    padding: 10,
-    marginBottom: 10,
-    borderRadius: 5,
-    fontSize: 16,
   },
 });

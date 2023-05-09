@@ -45,27 +45,36 @@ export const Campaigns = () => {
   }, []);
 
   return (
-    <View>
-      <CustomText>Mes Campagnes</CustomText>
-      {campaigns.length > 0 ? (
-        campaigns.map((campaign) => {
-          return (
-            <TouchableOpacity
-              key={campaign.id}
-              onPress={() =>
-                navigation.navigate("Map", { campaignId: campaign.id })
-              }
-            >
-              <CustomText>{campaign.name}</CustomText>
-            </TouchableOpacity>
-          );
-        })
-      ) : (
-        <ActivityIndicator />
-      )}
+    <View style={style.mainContainer}>
+      <View style={style.titleContainer}>
+        <CustomText style={style.text}>MES</CustomText>
+        <CustomText style={style.text}>CAMPAGNES</CustomText>
+      </View>
+      <View style={style.campaignsContainer}>
+        {campaigns.length > 0 ? (
+          campaigns.map((campaign) => {
+            return (
+              <TouchableOpacity
+                key={campaign.id}
+                style={style.btnCampaign}
+                onPress={() =>
+                  navigation.navigate("Map", { campaignId: campaign.id })
+                }
+              >
+                <CustomText style={style.text}>{campaign.name}</CustomText>
+              </TouchableOpacity>
+            );
+          })
+        ) : (
+          <ActivityIndicator />
+        )}
+      </View>
 
-      <TouchableOpacity onPress={() => setModalVisible(true)}>
-        <BsPlusLg />
+      <TouchableOpacity
+        style={style.btnPlus}
+        onPress={() => setModalVisible(true)}
+      >
+        <BsPlusLg style={style.text} />
       </TouchableOpacity>
 
       <Modal

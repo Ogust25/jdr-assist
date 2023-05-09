@@ -8,6 +8,7 @@ export const style = StyleSheet.create({
     width: "100vw",
     height: "100vh",
     backgroundColor: "#212121",
+    padding: "30px",
   },
   logoContainer: {
     display: "flex",
