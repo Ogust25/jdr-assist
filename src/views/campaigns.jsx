@@ -4,6 +4,7 @@ import {
   TouchableOpacity,
   Modal,
   TextInput,
+  Text,
   Button,
   ActivityIndicator,
 } from "react-native";
@@ -18,17 +19,35 @@ export const Campaigns = () => {
   const [modalVisible, setModalVisible] = useState(false);
   const [textValue, setTextValue] = useState("");
   const [campaigns, setCampaigns] = useState([]);
+  const [errorText, setErrorText] = useState("");
+
+  const isTextEmpty = (text) => {
+    return text.trim().length === 0;
+  };
+
+  const filterSpecialCharacters = (text) => {
+    return text.replace(/[^a-zA-Z0-9 ]/g, "");
+  };
 
   const addCampaign = async () => {
+    if (isTextEmpty(textValue)) {
+      setErrorText("Le nom de la campagne ne peut pas être vide");
+      return;
+    }
+
+    const filteredText = filterSpecialCharacters(textValue);
+
     try {
       const docRef = await addDoc(collection(db, "campaign"), {
-        name: textValue,
+        name: filteredText,
         crewMembers: [],
       });
       setTextValue("");
+      setErrorText("");
     } catch (e) {
       console.error("error: " + e);
     }
+
     getCampaign();
     setModalVisible(false);
   };
@@ -94,6 +113,7 @@ export const Campaigns = () => {
               value={textValue}
               onSubmitEditing={addCampaign}
             />
+            {errorText ? <Text style={style.error}>{errorText}</Text> : null}
             <Button title="Valider" onPress={addCampaign} />
           </View>
         </View>
