@@ -7,11 +7,13 @@ import { style } from "../style/crew";
 import { CrewCard } from "../components/CrewCard";
 import { BsPlusLg } from "react-icons/bs";
 import { db, collection, addDoc, doc, getDoc } from "../firebase/config";
+import CharacterForm from "../components/CharacterForm";
 
 export const Crew = () => {
   const route = useRoute();
   const { campaignId } = route.params;
   const [crewMembers, setCrewMembers] = useState([]);
+  const [modalVisible, setModalVisible] = useState(false);
 
   const getCrewMembers = async () => {
     const querySnapshot = await getDoc(
@@ -45,11 +47,18 @@ export const Crew = () => {
         ) : (
           <ActivityIndicator />
         )}
-        <TouchableOpacity>
+        <TouchableOpacity onPress={() => setModalVisible(true)}>
           <BsPlusLg />
         </TouchableOpacity>
       </View>
       <NavBar campaignId={campaignId} />
+      <CharacterForm
+        visible={modalVisible}
+        onClose={() => {
+          setModalVisible(false);
+        }}
+        campaignId={campaignId}
+      />
     </View>
   );
 };

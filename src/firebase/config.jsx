@@ -9,6 +9,7 @@ import {
   where,
   query,
   doc,
+  updateDoc,
 } from "firebase/firestore";
 
 import {
@@ -46,4 +47,5 @@ export {
   query,
   doc,
   getDoc,
+  updateDoc,
 };
