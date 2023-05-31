@@ -49,11 +49,11 @@ export const Campaigns = () => {
 			console.error('error: ' + e);
 		}
 
-		getCampaigns();
+		getCampaign();
 		setModalVisible(false);
 	};
 
-	const getCampaigns = async () => {
+	const getCampaign = async () => {
 		const querySnapshot = await getDocs(collection(db, 'campaign'));
 		setCampaigns(
 			querySnapshot.docs.map(doc => ({ ...doc.data(), id: doc.id })),

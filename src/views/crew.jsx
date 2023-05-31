@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { View, TouchableOpacity, ActivityIndicator, Text } from 'react-native';
+import { View, TouchableOpacity, ActivityIndicator } from 'react-native';
 import { CustomText } from '../components/CustomText';
 import { useRoute } from '@react-navigation/native';
 import { NavBar } from '../components/NavBar';
