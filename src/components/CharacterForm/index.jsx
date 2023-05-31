@@ -8,6 +8,7 @@ import {
   doc,
   updateDoc,
 } from "../../firebase/config";
+import { TouchableOpacity } from "react-native-web";
 
 const CharacterForm = ({ visible, onClose, campaignId }) => {
   const [name, setName] = useState("");
@@ -91,6 +92,10 @@ const CharacterForm = ({ visible, onClose, campaignId }) => {
   return (
     <Modal visible={visible} onRequestClose={onClose}>
       <View>
+        <TouchableOpacity onPress={onClose}>
+          <Text>X</Text>
+        </TouchableOpacity>
+
         <TextInput placeholder="Nom" value={name} onChangeText={setName} />
         {errorText !== "" && <Text>{errorText}</Text>}
         <Picker

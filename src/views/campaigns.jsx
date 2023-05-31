@@ -106,6 +106,9 @@ export const Campaigns = () => {
       >
         <View style={style.modalContainer}>
           <View style={style.modalContent}>
+            <TouchableOpacity onPress={() => setModalVisible(false)}>
+              <Text>X</Text>
+            </TouchableOpacity>
             <TextInput
               style={style.textInput}
               onChangeText={setTextValue}
