@@ -7,7 +7,7 @@ import { style as crewStyle } from '../style/crew';
 import { style as MainStyle } from '../style/MainTheme';
 import { CrewCard } from '../components/CrewCard';
 import { BsPlusLg } from 'react-icons/bs';
-import { db, doc, getDoc } from '../firebase/config';
+import { db, collection, addDoc, doc, getDoc } from '../firebase/config';
 import CharacterForm from '../components/CharacterForm';
 
 export const Crew = () => {

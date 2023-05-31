@@ -34,7 +34,7 @@ export const style = StyleSheet.create({
 		display: 'Block',
 		marginLeft: 'auto',
 		marginRight: 'auto',
-		marginTop: '15%',
+		marginTop: 'auto',
 		marginBottom: 'auto',
 		height: '45dp',
 		textAlign: 'center',
