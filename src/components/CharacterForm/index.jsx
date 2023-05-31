@@ -93,11 +93,11 @@ const CharacterForm = ({ visible, onClose, campaignId }) => {
     <Modal visible={visible} onRequestClose={onClose}>
       <View>
         <TouchableOpacity onPress={onClose}>
-          <Text>X</Text>
+          <CustomText>X</CustomText>
         </TouchableOpacity>
 
         <TextInput placeholder="Nom" value={name} onChangeText={setName} />
-        {errorText !== "" && <Text>{errorText}</Text>}
+        {errorText !== "" && <CustomText>{errorText}</CustomText>}
         <Picker
           selectedValue={gender}
           onValueChange={(itemValue) => setGender(itemValue)}
@@ -136,7 +136,7 @@ const CharacterForm = ({ visible, onClose, campaignId }) => {
           <Picker.Item label="Démoniste" value="Démoniste" />
         </Picker>
         <View style={{ flexDirection: "row" }}>
-          <Text>Force :</Text>
+          <CustomText>Force :</CustomText>
           <TextInput
             placeholder="Force"
             value={stats.strength.toString()}
@@ -147,7 +147,7 @@ const CharacterForm = ({ visible, onClose, campaignId }) => {
           />
         </View>
         <View style={{ flexDirection: "row" }}>
-          <Text>Dexterite :</Text>
+          <CustomText>Dexterite :</CustomText>
           <TextInput
             placeholder="Dexterite"
             value={stats.dexterity.toString()}
@@ -158,7 +158,7 @@ const CharacterForm = ({ visible, onClose, campaignId }) => {
           />
         </View>
         <View style={{ flexDirection: "row" }}>
-          <Text>Constitution :</Text>
+          <CustomText>Constitution :</CustomText>
           <TextInput
             placeholder="Constitution"
             value={stats.constitution.toString()}
@@ -169,7 +169,7 @@ const CharacterForm = ({ visible, onClose, campaignId }) => {
           />
         </View>
         <View style={{ flexDirection: "row" }}>
-          <Text>Intelligence :</Text>
+          <CustomText>Intelligence :</CustomText>
           <TextInput
             placeholder="Intelligence"
             value={stats.intelligence.toString()}
@@ -180,7 +180,7 @@ const CharacterForm = ({ visible, onClose, campaignId }) => {
           />
         </View>
         <View style={{ flexDirection: "row" }}>
-          <Text>Sagesse :</Text>
+          <CustomText>Sagesse :</CustomText>
           <TextInput
             placeholder="Sagesse"
             value={stats.wisdom.toString()}
@@ -191,7 +191,7 @@ const CharacterForm = ({ visible, onClose, campaignId }) => {
           />
         </View>
         <View style={{ flexDirection: "row" }}>
-          <Text>Charisme :</Text>
+          <CustomText>Charisme :</CustomText>
           <TextInput
             placeholder="Charisme"
             value={stats.charisma.toString()}
