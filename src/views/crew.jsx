@@ -55,6 +55,7 @@ export const Crew = () => {
       <CharacterForm
         visible={modalVisible}
         onClose={() => {
+          getCrewMembers();
           setModalVisible(false);
         }}
         campaignId={campaignId}
