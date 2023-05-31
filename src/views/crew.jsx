@@ -3,7 +3,7 @@ import { View, TouchableOpacity, ActivityIndicator } from 'react-native';
 import { CustomText } from '../components/CustomText';
 import { useRoute } from '@react-navigation/native';
 import { NavBar } from '../components/NavBar';
-import { style as crewStyle} from '../style/crew';
+import { style as crewStyle } from '../style/crew';
 import { style as MainStyle } from '../style/MainTheme';
 import { CrewCard } from '../components/CrewCard';
 import { BsPlusLg } from 'react-icons/bs';
