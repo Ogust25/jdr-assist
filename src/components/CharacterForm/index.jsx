@@ -1,13 +1,6 @@
 import React, { useState } from 'react';
 import { View, Modal, TextInput, Picker, Button, Text } from 'react-native';
-import {
-	db,
-	collection,
-	addDoc,
-	getDoc,
-	doc,
-	updateDoc,
-} from '../../firebase/config';
+import { db, getDoc, doc, updateDoc } from '../../firebase/config';
 import { TouchableOpacity } from 'react-native-web';
 import { CustomText } from '../CustomText';
 
