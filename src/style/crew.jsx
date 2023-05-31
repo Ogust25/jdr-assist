@@ -16,17 +16,17 @@ export const style = StyleSheet.create({
 		alignItems: 'center',
 		backgroundColor: 'rgba(0, 0, 0, 0.5)',
 	},
-	
+
 	modalContent: {
 		backgroundColor: '#fff',
 		padding: 20,
 		borderRadius: 10,
 	},
-	
+
 	error: {
 		color: 'red',
 	},
-	
+
 	btnPlus: {
 		backgroundColor: '#721E20',
 		borderRadius: '10dp',
@@ -40,12 +40,12 @@ export const style = StyleSheet.create({
 		textAlign: 'center',
 		paddingTop: '12dp',
 	},
-	
+
 	text: {
 		fontSize: '20pt',
 		color: 'white',
 	},
-	
+
 	crew: {
 		textAlign: 'center',
 		fontSize: '30pt',
