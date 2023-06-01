@@ -7,6 +7,6 @@ export const style = StyleSheet.create({
 		fontStyle: 'Bold',
 		color: 'white',
 		textDecorationColor: 'white',
-		padding: '3%'
+		padding: '3%',
 	},
 });

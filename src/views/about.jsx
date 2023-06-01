@@ -10,11 +10,12 @@ export const About = ({ navigation }) => {
 	}
 
 	return (
-
 		<View style={MainTheme.mainContainer}>
 			<CustomText style={MainTheme.title}>About</CustomText>
 			<CustomText style={AboutStyle.presentation}>Créé par</CustomText>
-			<CustomText style={AboutStyle.presentation}>August Gros et Elyès Moumit</CustomText>
+			<CustomText style={AboutStyle.presentation}>
+				August Gros et Elyès Moumit
+			</CustomText>
 			<CustomText style={MainTheme.text}>
 				Projet de fin d'année de développeur concepteur d'applications.
 				Application qui a pour but d'assister un maître du jeu dans une partie

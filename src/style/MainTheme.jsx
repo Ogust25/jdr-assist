@@ -51,14 +51,14 @@ export const style = StyleSheet.create({
 		textAlign: 'center',
 		display: 'inline-block',
 		width: 'auto',
-	  },
-	  
-	  btnPlus: {
-		backgroundColor: "#721E20",
+	},
+
+	btnPlus: {
+		backgroundColor: '#721E20',
 		paddingHorizontal: 15,
 		paddingVertical: 14,
 		borderRadius: 10,
 		marginTop: 40,
 		width: 55,
-	  },
+	},
 });
