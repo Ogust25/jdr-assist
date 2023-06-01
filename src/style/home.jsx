@@ -14,7 +14,7 @@ export const style = StyleSheet.create({
     display: "flex",
     alignItems: "center",
     marginTop: "50px",
-  },
+  },//46.0.21
   img: {
     width: 150,
     height: 150,

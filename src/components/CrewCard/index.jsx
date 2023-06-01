@@ -17,10 +17,10 @@ export const CrewCard = ({ member, campaignId }) => {
 				imgProfil = require('../../../public/assets/images/GnomeFeminin.jpg');
 				break;
 			case 'elfeMasculin':
-				imgProfil = require('../../../public/assets/images/elfeMasculin.jpg');
+				imgProfil = require('../../../public/assets/images/ElfeMasculin.jpg');
 				break;
 			case 'elfeFeminin':
-				imgProfil = require('../../../public/assets/images/elfeFeminin.jpg');
+				imgProfil = require('../../../public/assets/images/ElfeFeminin.jpg');
 				break;
 			case 'humainMasculin':
 				imgProfil = require('../../../public/assets/images/humainMasculin.jpg');
