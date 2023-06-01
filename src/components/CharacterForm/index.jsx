@@ -71,8 +71,9 @@ const CharacterForm = ({ visible, onClose, campaignId }) => {
 					gender,
 					race: selectedRace,
 					stats,
+					image: selectedRace + gender,
 					lvl: 0,
-					id: Math.random(),
+					id: crewMembers.length,
 				};
 				const updatedCrewMembers = [...crewMembers, newMember];
 				await updateDoc(doc(db, 'campaign', campaignId), {

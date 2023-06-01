@@ -19,6 +19,7 @@ export const Campaigns = () => {
 	const [modalVisible, setModalVisible] = useState(false);
 	const [textValue, setTextValue] = useState('');
 	const [campaigns, setCampaigns] = useState([]);
+	const [loading, setLoading] = useState(true);
 	const [errorText, setErrorText] = useState('');
 
 	const isTextEmpty = text => {
@@ -48,19 +49,20 @@ export const Campaigns = () => {
 			console.error('error: ' + e);
 		}
 
-		getCampaign();
+		getCampaigns();
 		setModalVisible(false);
 	};
 
-	const getCampaign = async () => {
+	const getCampaigns = async () => {
 		const querySnapshot = await getDocs(collection(db, 'campaign'));
 		setCampaigns(
 			querySnapshot.docs.map(doc => ({ ...doc.data(), id: doc.id })),
 		);
+		setLoading(false);
 	};
 
 	useEffect(() => {
-		getCampaign();
+		getCampaigns();
 	}, []);
 
 	return (
@@ -71,21 +73,25 @@ export const Campaigns = () => {
 			</View>
 			<View style={style.campaignsContainer}>
 				{campaigns.length > 0 ? (
-					campaigns.map(campaign => {
-						return (
-							<TouchableOpacity
-								key={campaign.id}
-								style={style.btnCampaign}
-								onPress={() =>
-									navigation.navigate('Map', { campaignId: campaign.id })
-								}
-							>
-								<CustomText style={style.text}>{campaign.name}</CustomText>
-							</TouchableOpacity>
-						);
-					})
+					campaigns.map(campaign => (
+						<TouchableOpacity
+							key={campaign.id}
+							style={style.btnCampaign}
+							onPress={() =>
+								navigation.navigate('Map', { campaignId: campaign.id })
+							}
+						>
+							<CustomText style={style.text}>{campaign.name}</CustomText>
+						</TouchableOpacity>
+					))
 				) : (
-					<ActivityIndicator />
+					<>
+						{loading ? (
+							<ActivityIndicator />
+						) : (
+							<Text>Aucune campagne trouvée.</Text>
+						)}
+					</>
 				)}
 			</View>
 

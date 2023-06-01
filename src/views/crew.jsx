@@ -1,29 +1,28 @@
 import React, { useState, useEffect } from 'react';
-import { View, TouchableOpacity, ActivityIndicator } from 'react-native';
+import { View, TouchableOpacity, ActivityIndicator, Text } from 'react-native';
 import { CustomText } from '../components/CustomText';
 import { useRoute } from '@react-navigation/native';
 import { NavBar } from '../components/NavBar';
 import { style } from '../style/crew';
 import { CrewCard } from '../components/CrewCard';
 import { BsPlusLg } from 'react-icons/bs';
-import { db, collection, addDoc, doc, getDoc } from '../firebase/config';
+import { db, doc, getDoc } from '../firebase/config';
 import CharacterForm from '../components/CharacterForm';
 
 export const Crew = () => {
 	const route = useRoute();
 	const { campaignId } = route.params;
 	const [crewMembers, setCrewMembers] = useState([]);
+	const [loading, setLoading] = useState(true);
 	const [modalVisible, setModalVisible] = useState(false);
 
 	const getCrewMembers = async () => {
-		const querySnapshot = await getDoc(
-			doc(collection(db, 'campaign'), campaignId),
-		);
-		setCrewMembers(
-			querySnapshot.data().crewMembers.map(member => ({
-				...member,
-			})),
-		);
+		const campaignRef = doc(db, 'campaign', campaignId);
+		const campaignSnapshot = await getDoc(campaignRef);
+		const { crewMembers } = campaignSnapshot.data();
+
+		setCrewMembers(crewMembers.map(member => ({ ...member })));
+		setLoading(false);
 	};
 
 	useEffect(() => {
@@ -35,17 +34,17 @@ export const Crew = () => {
 			<CustomText style={style.crew}>Crew</CustomText>
 			<View style={style.text}>
 				{crewMembers.length > 0 ? (
-					crewMembers.map(member => {
-						return (
-							<CrewCard
-								key={member.id}
-								campaignId={campaignId}
-								member={member}
-							/>
-						);
-					})
+					crewMembers.map(member => (
+						<CrewCard key={member.id} campaignId={campaignId} member={member} />
+					))
 				) : (
-					<ActivityIndicator />
+					<>
+						{loading ? (
+							<ActivityIndicator />
+						) : (
+							<Text>Aucun membre trouvé.</Text>
+						)}
+					</>
 				)}
 				<TouchableOpacity
 					style={style.btnPlus}
