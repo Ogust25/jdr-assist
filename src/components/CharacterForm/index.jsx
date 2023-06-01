@@ -9,6 +9,7 @@ import {
   updateDoc,
 } from "../../firebase/config";
 import { TouchableOpacity } from "react-native-web";
+import { CustomText } from "../CustomText";
 
 const CharacterForm = ({ visible, onClose, campaignId }) => {
   const [name, setName] = useState("");
