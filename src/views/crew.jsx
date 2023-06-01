@@ -32,12 +32,7 @@ export const Crew = () => {
 
 	return (
 		<View style={style.container}>
-			<TouchableOpacity
-				style={style.text}
-				onPress={() => setModalVisible(true)}
-			>
-				<CustomText style={style.crew}>Crew</CustomText>
-			</TouchableOpacity>
+			<CustomText style={style.crew}>Crew</CustomText>
 			<View style={style.text}>
 				{crewMembers.length > 0 ? (
 					crewMembers.map(member => {
