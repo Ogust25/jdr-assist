@@ -16,17 +16,17 @@ export const CrewCard = ({ member, campaignId }) => {
 			case 'GnomeFeminin':
 				imgProfil = require('../../../public/assets/images/GnomeFeminin.jpg');
 				break;
-			case 'elfeMasculin':
+			case 'ElfeMasculin':
 				imgProfil = require('../../../public/assets/images/ElfeMasculin.jpg');
 				break;
-			case 'elfeFeminin':
+			case 'ElfeFeminin':
 				imgProfil = require('../../../public/assets/images/ElfeFeminin.jpg');
 				break;
-			case 'humainMasculin':
-				imgProfil = require('../../../public/assets/images/humainMasculin.jpg');
+			case 'HumainMasculin':
+				imgProfil = require('../../../public/assets/images/HumainMasculin.jpg');
 				break;
-			case 'humainFeminin':
-				imgProfil = require('../../../public/assets/images/humainFeminin.jpg');
+			case 'HumainFeminin':
+				imgProfil = require('../../../public/assets/images/HumainFeminin.jpg');
 				break;
 			case 'GithyankiFeminin':
 				imgProfil = require('../../../public/assets/images/GithyankiFeminin.jpg');
@@ -62,9 +62,9 @@ export const CrewCard = ({ member, campaignId }) => {
 				}
 			>
 				<Image source={imgSelector()} style={style.img} />
-				<View>
-					<CustomText>{member.name}</CustomText>
-					<CustomText>
+				<View style={style.blocPersonnage}>
+					<CustomText style={style.text}>{member.name}</CustomText>
+					<CustomText style={style.text}>
 						{member.race}, {member.genre}
 					</CustomText>
 				</View>
