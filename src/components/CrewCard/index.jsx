@@ -32,7 +32,7 @@ export const CrewCard = ({ member, campaignId }) => {
 				imgProfil = require('../../../public/assets/images/GithyankiFeminin.jpg');
 				break;
 			case 'GithyankiMasculin':
-				imgProfil = require('../../../public/assets/images/GithyankiFeminin.jpg');
+				imgProfil = require('../../../public/assets/images/GithyankiMasculin.jpg');
 				break;
 			case 'ElfeNoirMasculin':
 				imgProfil = require('../../../public/assets/images/ElfeNoirMasculin.jpg');
@@ -45,6 +45,12 @@ export const CrewCard = ({ member, campaignId }) => {
 				break;
 			case 'DemiElfeMasculin':
 				imgProfil = require('../../../public/assets/images/DemiElfeMasculin.jpg');
+				break;
+			case 'NainMasculin':
+				imgProfil = require('../../../public/assets/images/NainMasculin.jpg');
+				break;
+			case 'NainFeminin':
+				imgProfil = require('../../../public/assets/images/NainFeminin.jpg');
 				break;
 		}
 		return imgProfil;

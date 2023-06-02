@@ -42,7 +42,7 @@ export const Crew = () => {
 						{loading ? (
 							<ActivityIndicator />
 						) : (
-							<Text>Aucun membre trouvé.</Text>
+							<CustomText>Aucun membre trouvé.</CustomText>
 						)}
 					</>
 				)}

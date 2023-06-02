@@ -99,7 +99,7 @@ const CharacterForm = ({ visible, onClose, campaignId }) => {
 				>
 					<Picker.Item label="Genre" value="" />
 					<Picker.Item label="Masculin" value="Masculin" />
-					<Picker.Item label="Féminin" value="Féminin" />
+					<Picker.Item label="Féminin" value="Feminin" />
 				</Picker>
 				<Picker
 					selectedValue={selectedRace}
@@ -108,8 +108,8 @@ const CharacterForm = ({ visible, onClose, campaignId }) => {
 					<Picker.Item label="Race" value="" />
 					<Picker.Item label="Humain" value="Humain" />
 					<Picker.Item label="Elfe" value="Elfe" />
-					<Picker.Item label="Elfe Noir" value="Elfe Noir" />
-					<Picker.Item label="Demi-Elfe" value="Demi-Elfe" />
+					<Picker.Item label="Elfe Noir" value="ElfeNoir" />
+					<Picker.Item label="Demi-Elfe" value="DemiElfe" />
 					<Picker.Item label="Nain" value="Nain" />
 					<Picker.Item label="Gnome" value="Gnome" />
 					<Picker.Item label="Githyanki" value="Githyanki" />

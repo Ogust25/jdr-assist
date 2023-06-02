@@ -62,7 +62,7 @@ export const Campaigns = () => {
 	};
 
 	useEffect(() => {
-		getCampaigns();
+		getCampaign();
 	}, []);
 
 	return (
