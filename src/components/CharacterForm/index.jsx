@@ -3,7 +3,7 @@ import { View, Modal, TextInput, Picker, Button, Text } from 'react-native';
 import { db, getDoc, doc, updateDoc } from '../../firebase/config';
 import { TouchableOpacity } from 'react-native-web';
 import { CustomText } from '../CustomText';
-import { style as Modalbox } from '/home/k-fe/appli/jdr-assist/src/style/modalbox.jsx';
+import { style as Modalbox } from '../../style/modalbox';
 
 const CharacterForm = ({ visible, onClose, campaignId }) => {
 	const [name, setName] = useState('');
