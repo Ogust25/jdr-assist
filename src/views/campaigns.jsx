@@ -9,11 +9,12 @@ import {
 	ActivityIndicator,
 } from 'react-native';
 import { CustomText } from '../components/CustomText';
+import { style as MainStyle } from '../style/MainTheme';
 import { useNavigation } from '@react-navigation/native';
 import { BsPlusLg } from 'react-icons/bs';
-import { style } from '../style/campaigns';
+import { style as campaignStyle } from '../style/campaigns';
 import { db, collection, addDoc, getDocs } from '../firebase/config';
-
+import { style as Modalbox } from '../style/modalbox';
 export const Campaigns = () => {
 	const navigation = useNavigation();
 	const [modalVisible, setModalVisible] = useState(false);
@@ -66,22 +67,24 @@ export const Campaigns = () => {
 	}, []);
 
 	return (
-		<View style={style.mainContainer}>
-			<View style={style.titleContainer}>
-				<CustomText style={style.text}>MES</CustomText>
-				<CustomText style={style.text}>CAMPAGNES</CustomText>
+		<View style={campaignStyle.mainContainer}>
+			<View style={campaignStyle.titleContainer}>
+				<CustomText style={campaignStyle.text}>MES</CustomText>
+				<CustomText style={campaignStyle.text}>CAMPAGNES</CustomText>
 			</View>
-			<View style={style.campaignsContainer}>
+			<View style={campaignStyle.campaignsContainer}>
 				{campaigns.length > 0 ? (
 					campaigns.map(campaign => (
 						<TouchableOpacity
 							key={campaign.id}
-							style={style.btnCampaign}
+							style={campaignStyle.btnCampaign}
 							onPress={() =>
 								navigation.navigate('Map', { campaignId: campaign.id })
 							}
 						>
-							<CustomText style={style.text}>{campaign.name}</CustomText>
+							<CustomText style={campaignStyle.text}>
+								{campaign.name}
+							</CustomText>
 						</TouchableOpacity>
 					))
 				) : (
@@ -96,10 +99,10 @@ export const Campaigns = () => {
 			</View>
 
 			<TouchableOpacity
-				style={style.btnPlus}
+				style={MainStyle.btnPlus}
 				onPress={() => setModalVisible(true)}
 			>
-				<BsPlusLg style={style.text} />
+				<BsPlusLg style={campaignStyle.text} />
 			</TouchableOpacity>
 
 			<Modal
@@ -110,20 +113,27 @@ export const Campaigns = () => {
 					setModalVisible(false);
 				}}
 			>
-				<View style={style.modalContainer}>
-					<View style={style.modalContent}>
+				<View style={Modalbox.modalContainer}>
+					<View style={Modalbox.modalContent}>
 						<TouchableOpacity onPress={() => setModalVisible(false)}>
-							<Text>X</Text>
+							<Text style={Modalbox.closeButtonLabel}>X</Text>
 						</TouchableOpacity>
 						<TextInput
-							style={style.textInput}
+							style={Modalbox.textInput}
 							onChangeText={setTextValue}
 							placeholder="Nom de la campagne"
 							value={textValue}
 							onSubmitEditing={addCampaign}
 						/>
-						{errorText ? <Text style={style.error}>{errorText}</Text> : null}
-						<Button title="Valider" onPress={addCampaign} />
+						{errorText ? (
+							<Text style={campaignStyle.error}>{errorText}</Text>
+						) : null}
+						<Button
+							title="Valider"
+							onPress={addCampaign}
+							buttonStyle={Modalbox.validateButton}
+							titleStyle={Modalbox.validateButtonLabel}
+						/>
 					</View>
 				</View>
 			</Modal>

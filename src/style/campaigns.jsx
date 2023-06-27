@@ -32,13 +32,7 @@ export const style = StyleSheet.create({
     textAlign: "center",
     marginBottom: "10px",
   },
-  btnPlus: {
-    backgroundColor: "#721E20",
-    paddingHorizontal: "15px",
-    paddingVertical: "14px",
-    borderRadius: "10px",
-    marginTop: "40px",
-  },
+
   modalContainer: {
     flex: 1,
     justifyContent: "center",

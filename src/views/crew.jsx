@@ -3,7 +3,8 @@ import { View, TouchableOpacity, ActivityIndicator } from 'react-native';
 import { CustomText } from '../components/CustomText';
 import { useRoute } from '@react-navigation/native';
 import { NavBar } from '../components/NavBar';
-import { style } from '../style/crew';
+import { style as crewStyle} from '../style/crew';
+import { style as MainStyle } from '../style/MainTheme';
 import { CrewCard } from '../components/CrewCard';
 import { BsPlusLg } from 'react-icons/bs';
 import { db, doc, getDoc } from '../firebase/config';
@@ -30,9 +31,9 @@ export const Crew = () => {
 	}, []);
 
 	return (
-		<View style={style.container}>
-			<CustomText style={style.crew}>Crew</CustomText>
-			<View style={style.text}>
+		<View style={crewStyle.container}>
+			<CustomText style={crewStyle.crew}>Crew</CustomText>
+			<View style={crewStyle.text}>
 				{crewMembers.length > 0 ? (
 					crewMembers.map(member => (
 						<CrewCard key={member.id} campaignId={campaignId} member={member} />
@@ -47,10 +48,10 @@ export const Crew = () => {
 					</>
 				)}
 				<TouchableOpacity
-					style={style.btnPlus}
+					style={MainStyle.btnPlus}
 					onPress={() => setModalVisible(true)}
 				>
-					<BsPlusLg style={style.text} />
+					<BsPlusLg style={crewStyle.text} />
 				</TouchableOpacity>
 			</View>
 			<NavBar campaignId={campaignId} />

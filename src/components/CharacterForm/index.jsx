@@ -3,6 +3,7 @@ import { View, Modal, TextInput, Picker, Button, Text } from 'react-native';
 import { db, getDoc, doc, updateDoc } from '../../firebase/config';
 import { TouchableOpacity } from 'react-native-web';
 import { CustomText } from '../CustomText';
+import { style as Modalbox } from '/home/k-fe/appli/jdr-assist/src/style/modalbox.jsx';
 
 const CharacterForm = ({ visible, onClose, campaignId }) => {
 	const [name, setName] = useState('');
@@ -86,22 +87,29 @@ const CharacterForm = ({ visible, onClose, campaignId }) => {
 
 	return (
 		<Modal visible={visible} onRequestClose={onClose}>
-			<View>
+			<View style={Modalbox.modalContent}>
 				<TouchableOpacity onPress={onClose}>
-					<CustomText>X</CustomText>
+					<CustomText style={Modalbox.closeButtonLabel}>X</CustomText>
 				</TouchableOpacity>
 
-				<TextInput placeholder="Nom" value={name} onChangeText={setName} />
+				<TextInput
+					style={Modalbox.textInput}
+					placeholder="Nom"
+					value={name}
+					onChangeText={setName}
+				/>
 				{errorText !== '' && <CustomText>{errorText}</CustomText>}
 				<Picker
+					style={Modalbox.pickerContainer}
 					selectedValue={gender}
 					onValueChange={itemValue => setGender(itemValue)}
 				>
-					<Picker.Item label="Genre" value="" />
+					<Picker.Item style={Modalbox.picker} label="Genre" value="" />
 					<Picker.Item label="Masculin" value="Masculin" />
 					<Picker.Item label="Féminin" value="Feminin" />
 				</Picker>
 				<Picker
+					style={Modalbox.pickerContainer}
 					selectedValue={selectedRace}
 					onValueChange={itemValue => setSelectedRace(itemValue)}
 				>
@@ -115,6 +123,7 @@ const CharacterForm = ({ visible, onClose, campaignId }) => {
 					<Picker.Item label="Githyanki" value="Githyanki" />
 				</Picker>
 				<Picker
+					style={Modalbox.pickerContainer}
 					selectedValue={selectedClass}
 					onValueChange={itemValue => setSelectedClass(itemValue)}
 				>
@@ -131,8 +140,9 @@ const CharacterForm = ({ visible, onClose, campaignId }) => {
 					<Picker.Item label="Démoniste" value="Démoniste" />
 				</Picker>
 				<View style={{ flexDirection: 'row' }}>
-					<CustomText>Force :</CustomText>
+					<CustomText style={Modalbox.textInput}>Force :</CustomText>
 					<TextInput
+						style={Modalbox.textInput}
 						placeholder="Force"
 						value={stats.strength.toString()}
 						onChangeText={value =>
@@ -142,8 +152,9 @@ const CharacterForm = ({ visible, onClose, campaignId }) => {
 					/>
 				</View>
 				<View style={{ flexDirection: 'row' }}>
-					<CustomText>Dexterite :</CustomText>
+					<CustomText style={Modalbox.textInput}>Dexterite :</CustomText>
 					<TextInput
+						style={Modalbox.textInput}
 						placeholder="Dexterite"
 						value={stats.dexterity.toString()}
 						onChangeText={value =>
@@ -153,8 +164,9 @@ const CharacterForm = ({ visible, onClose, campaignId }) => {
 					/>
 				</View>
 				<View style={{ flexDirection: 'row' }}>
-					<CustomText>Constitution :</CustomText>
+					<CustomText style={Modalbox.textInput}>Constitution :</CustomText>
 					<TextInput
+						style={Modalbox.textInput}
 						placeholder="Constitution"
 						value={stats.constitution.toString()}
 						onChangeText={value =>
@@ -164,8 +176,9 @@ const CharacterForm = ({ visible, onClose, campaignId }) => {
 					/>
 				</View>
 				<View style={{ flexDirection: 'row' }}>
-					<CustomText>Intelligence :</CustomText>
+					<CustomText style={Modalbox.textInput}>Intelligence :</CustomText>
 					<TextInput
+						style={Modalbox.textInput}
 						placeholder="Intelligence"
 						value={stats.intelligence.toString()}
 						onChangeText={value =>
@@ -175,8 +188,9 @@ const CharacterForm = ({ visible, onClose, campaignId }) => {
 					/>
 				</View>
 				<View style={{ flexDirection: 'row' }}>
-					<CustomText>Sagesse :</CustomText>
+					<CustomText style={Modalbox.textInput}>Sagesse :</CustomText>
 					<TextInput
+						style={Modalbox.textInput}
 						placeholder="Sagesse"
 						value={stats.wisdom.toString()}
 						onChangeText={value =>
@@ -186,8 +200,9 @@ const CharacterForm = ({ visible, onClose, campaignId }) => {
 					/>
 				</View>
 				<View style={{ flexDirection: 'row' }}>
-					<CustomText>Charisme :</CustomText>
+					<CustomText style={Modalbox.textInput}>Charisme :</CustomText>
 					<TextInput
+						style={Modalbox.textInput}
 						placeholder="Charisme"
 						value={stats.charisma.toString()}
 						onChangeText={value =>

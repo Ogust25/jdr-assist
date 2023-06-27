@@ -3,7 +3,6 @@ import { View, TouchableOpacity, Image } from "react-native";
 import { CustomText } from "../components/CustomText";
 import logo from "../../public/assets/images/logo.png";
 import { style } from "../style/home";
-
 export const Home = ({ navigation }) => {
   function goCampaign() {
     navigation.navigate("Campaigns");
@@ -17,8 +16,7 @@ export const Home = ({ navigation }) => {
     <View style={style.mainContainer}>
       <View style={style.logoContainer}>
         <Image source={logo} style={style.img} />
-        <CustomText style={style.text}>JDR</CustomText>
-        <CustomText style={style.text}>COMPAGNON</CustomText>
+        <CustomText style={style.text}>RollAndScroll</CustomText>
       </View>
       <TouchableOpacity onPress={goCampaign} style={style.btnStart}>
         <CustomText style={style.text}>COMMENCER</CustomText>
