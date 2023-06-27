@@ -7,44 +7,50 @@ export const style = StyleSheet.create({
 		width: '100vw',
 		height: '100vh',
 		backgroundColor: '#212121',
-		padding: '30px',
+		padding: '30dp',
 	},
+
 	modalContainer: {
 		flex: 1,
 		justifyContent: 'center',
 		alignItems: 'center',
 		backgroundColor: 'rgba(0, 0, 0, 0.5)',
 	},
+	
 	modalContent: {
 		backgroundColor: '#fff',
 		padding: 20,
 		borderRadius: 10,
 	},
+	
 	error: {
 		color: 'red',
 	},
+	
 	btnPlus: {
 		backgroundColor: '#721E20',
-		borderRadius: '10px',
-		width: '43px',
+		borderRadius: '10dp',
+		width: '43dp',
 		display: 'Block',
 		marginLeft: 'auto',
 		marginRight: 'auto',
 		marginTop: '15%',
 		marginBottom: 'auto',
-		height: '45px',
+		height: '45dp',
 		textAlign: 'center',
-		paddingTop: '12px',
+		paddingTop: '12dp',
 	},
+	
 	text: {
-		fontSize: '20px',
+		fontSize: '20pt',
 		color: 'white',
 	},
+	
 	crew: {
 		textAlign: 'center',
-		fontSize: '30px',
+		fontSize: '30pt',
 		fontStyle: 'Bold',
 		color: 'white',
-		padding: '20px',
+		padding: '20dp',
 	},
 });
