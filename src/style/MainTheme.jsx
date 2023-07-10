@@ -6,7 +6,9 @@ export const style = StyleSheet.create({
 		fontSize: '30pt',
 		fontStyle: 'Bold',
 		color: 'white',
-		padding: '20dp',
+		marginTop: '5%',
+		marginBottom: '5%',
+
 	},
 
 	text: {
@@ -14,8 +16,9 @@ export const style = StyleSheet.create({
 		color: 'white',
 		textAlign: 'justify',
 		textJustify: 'inter-character',
-		width: '100%',
+		width: '80%',
 		textDecorationColor: 'white',
+		margin: '5%',
 	},
 	StatsGlobales: {
 		//display: 'block!',
@@ -31,6 +34,8 @@ export const style = StyleSheet.create({
 		backgroundColor: '#212121',
 		padding: '30dp',
 		color: 'white',
+		paddingTop: '5%',
+		paddingBottom: '5%',
 	},
 
 	back: {
@@ -51,6 +56,7 @@ export const style = StyleSheet.create({
 		textAlign: 'center',
 		display: 'inline-block',
 		width: 'auto',
+		margin: '5%',
 	},
 
 	btnPlus: {

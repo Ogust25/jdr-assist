@@ -62,6 +62,7 @@ export const Campaigns = () => {
 		setLoading(false);
 	};
 
+	
 	useEffect(() => {
 		getCampaign();
 	}, []);

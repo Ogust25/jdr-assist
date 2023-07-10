@@ -35,18 +35,12 @@ export const style = StyleSheet.create({
 	timelineEventDot: {
 		display: 'none',
 	},
-  timelineConnector: {
-    position: 'absolute',
-    backgroundColor: 'gray',
+   timelineConnector: {
+    marginLeft: '40%',
+    height: 30,
     width: 5,
-    zIndex: -1,
-    left: 24,
-    top: 0,
-    bottom: 0,
-    height: '85%',
-    overflow: 'hidden',
-    flexDirection: 'column', 
-  },
+    backgroundColor: 'black',
+  }, 
   
   mainEvent: {
     width: 50,

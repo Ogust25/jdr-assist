@@ -1,13 +1,35 @@
 import { StyleSheet } from 'react-native';
 
-export const style = StyleSheet.create({
+export const characterPageStyle = StyleSheet.create({
 	container: {
-		display: 'flex',
-		flexDirection: 'row',
-		justifyContent: 'space-between',
 		alignItems: 'center',
-		flexDirection: 'column',
-	},
+		justifyContent: 'center',
+		flexDirection: 'row',
+	  },
+	  statsContainer: {
+		flexDirection: 'row',
+		alignItems: 'center',
+	  },
+	  statsText: {
+		fontSize: 15,
+		fontWeight: 'bold',
+		color: 'white',
+		textDecorationColor: 'white',
+		marginRight: '25%',
+	  },
+	  statsChangeContainer: {
+		flexDirection: 'row',
+		alignItems: 'center',
+		margin: 30,
+	  },
+	  statsChangeText: {
+		fontSize: 15,
+		fontWeight: 'bold',
+		color: 'white',
+		textDecorationColor: 'white',
+		marginRight: '100%',
+		marginLeft: '100%',
+	  },
 
 	identifiants: {
 		fontSize: 18,
@@ -21,5 +43,13 @@ export const style = StyleSheet.create({
 		fontWeight: 'bold',
 		color: 'white',
 		textDecorationColor: 'white',
+		paddingBottom: '10%',
 	},
+	statsChange: {
+		fontSize: 15,
+		fontWeight: 'bold',
+		color: 'white',
+		textDecorationColor: 'white',
+	},
+
 });
