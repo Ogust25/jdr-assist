@@ -58,6 +58,7 @@ export const style = StyleSheet.create({
 		color: '#fff',
 		fontSize: 20,
 		fontWeight: 'bold',
+		alignContent: 'center',
 	},
 	validateButton: {
 		color: 'white',

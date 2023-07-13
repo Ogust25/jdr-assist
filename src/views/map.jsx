@@ -1,11 +1,10 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, Alert } from 'react';
 import {
 	View,
 	Image,
 	ScrollView,
 	StyleSheet,
 	TouchableOpacity,
-	isActiveNext,
 } from 'react-native';
 import { CustomText } from '../components/CustomText';
 import { useRoute } from '@react-navigation/native';
@@ -14,7 +13,6 @@ import { style } from '../style/map';
 import logo from '../../public/assets/images/logo.png';
 import { db, collection, doc, getDoc } from '../firebase/config';
 import { style as MainStyle } from '../style/MainTheme';
-/* import timelineConnector from '../components/TimelineConnector'; */
 
 export const Map = () => {
 	const [isActive, setIsActive] = useState(true);
@@ -34,20 +32,17 @@ export const Map = () => {
 		getCampaign();
 	}, []);
 
-
-	//Gestion de la carte
+	// Gestion de la carte
 	const [activeEvents, setActiveEvents] = useState([]);
 	const toggleEventActivation = eventId => {
-		setActiveEvents((prevActiveEvents) => {
+		setActiveEvents(prevActiveEvents => {
 			if (prevActiveEvents.includes(eventId)) {
-			  return prevActiveEvents.filter((id) => id !== eventId);
+				return prevActiveEvents.filter(id => id !== eventId);
 			} else {
-			  return [...prevActiveEvents, eventId];
+				return [...prevActiveEvents, eventId];
 			}
-		  });
-		  setIsActive((prevIsActive) => !prevIsActive);
-		};
-		
+		});
+	};
 
 	//Ajout des évenements :
 	const events = [
@@ -197,34 +192,20 @@ export const Map = () => {
 											? style.subEventActive
 											: null,
 									]}
-									/* onClick={toggleActive} */
 									onPress={() => {
-										toggleEventActivation(event.isActive);
-										console.log(event.isActive);
+										toggleEventActivation(event.id);
 									}}
 									onLongPress={() =>
-										console.log(
-											"Détails de l'événement",
-											`Texte de l'événement : ${event.description}`,
-										)
+										console.log("Détail de l'événement", event.description)
 									}
 								>
 									<View
 										style={[
 											style.timelineEventDot,
-											activeEvents.includes(event.id) ? style.activeDot : null,
+											event.isActive ? style.mainEventActive : null,
 										]}
 									/>
-									{/* {event.parentId && (
-								 	<View
-										style={[
-											style.timelineConnector,
-											{
-												display: isActiveNext ? 'flex' : 'none',
-											},
-										]}
-									/> 
-								)} */}
+									{event.parentId && <View style={style.timelineConnector} />}
 								</TouchableOpacity>
 							</React.Fragment>
 						))}

@@ -91,12 +91,15 @@ export const CharacterPage = () => {
 				<CustomText style={characterPageStyle.identifiants}>
 					{actualCharacter.name}
 				</CustomText>
+			    <CustomText>{"\n"}</CustomText>
 				<CustomText style={characterPageStyle.identifiants}>
 					{actualCharacter.race}, {actualCharacter.genre}
 				</CustomText>
+			    <CustomText>{"\n"}</CustomText>
 				<CustomText style={characterPageStyle.identifiants}>
 					{actualCharacter.classe}
 				</CustomText>
+			    <CustomText>{"\n"}</CustomText>
 				<CustomText style={characterPageStyle.identifiants}>
 					LVL {actualCharacter.lvl}
 				</CustomText>

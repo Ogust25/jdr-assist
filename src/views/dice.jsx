@@ -63,7 +63,7 @@ export const DicePage = () => {
 						<View style={style.modalContent}>
 							<ModalContent1 />
 							<TouchableOpacity style={style.closeButton} onPress={closeModal}>
-								<CustomText style={style.closeButtonLabel}>Fermer</CustomText>
+								<CustomText style={style.closeButtonLabel}>X</CustomText>
 							</TouchableOpacity>
 						</View>
 					</View>
@@ -77,7 +77,7 @@ export const DicePage = () => {
 						<View style={style.modalContent}>
 							<ModalContent2 />
 							<TouchableOpacity style={style.closeButton} onPress={closeModal}>
-								<CustomText style={style.closeButtonLabel}>Fermer</CustomText>
+								<CustomText style={style.closeButtonLabel}>X</CustomText>
 							</TouchableOpacity>
 						</View>
 					</View>
@@ -91,7 +91,7 @@ export const DicePage = () => {
 						<View style={style.modalContent}>
 							<ModalContent3 />
 							<TouchableOpacity style={style.closeButton} onPress={closeModal}>
-								<CustomText style={style.closeButtonLabel}>Fermer</CustomText>
+								<CustomText style={style.closeButtonLabel}>X</CustomText>
 							</TouchableOpacity>
 						</View>
 					</View>
@@ -106,7 +106,7 @@ export const DicePage = () => {
 						<View style={style.modalContent}>
 							<ModalContent4 />
 							<TouchableOpacity style={style.closeButton} onPress={closeModal}>
-								<CustomText style={style.closeButtonLabel}>Fermer</CustomText>
+								<CustomText style={style.closeButtonLabel}>X</CustomText>
 							</TouchableOpacity>
 						</View>
 					</View>
@@ -120,7 +120,7 @@ export const DicePage = () => {
 						<View style={style.modalContent}>
 							<ModalContent5 />
 							<TouchableOpacity style={style.closeButton} onPress={closeModal}>
-								<CustomText style={style.closeButtonLabel}>Fermer</CustomText>
+								<CustomText style={style.closeButtonLabel}>X</CustomText>
 							</TouchableOpacity>
 						</View>
 					</View>
@@ -134,7 +134,7 @@ export const DicePage = () => {
 						<View style={style.modalContent}>
 							<ModalContent6 />
 							<TouchableOpacity style={style.closeButton} onPress={closeModal}>
-								<CustomText style={style.closeButtonLabel}>Fermer</CustomText>
+								<CustomText style={style.closeButtonLabel}>X</CustomText>
 							</TouchableOpacity>
 						</View>
 					</View>

@@ -14,7 +14,7 @@ export const style = StyleSheet.create({
 	timelineContainer: {
     marginLeft: '5%',
 		width: '90%',
-		height: '85%',
+		height: '80%',
 		borderWidth: 2,
 		borderColor: 'black',
 		borderRadius: 10,

@@ -26,12 +26,12 @@ export const NavBar = ({ campaignId }) => {
 			>
 				<BsDice6 />
 			</TouchableOpacity>
-			<TouchableOpacity onPress={() => console.log('timer')}>
+{/* 			<TouchableOpacity onPress={() => console.log('timer')}>
 				<BsHourglassSplit />
 			</TouchableOpacity>
 			<TouchableOpacity onPress={() => console.log('settings')}>
 				<AiOutlineSetting />
-			</TouchableOpacity>
+			</TouchableOpacity> */}
 		</View>
 	);
 };
